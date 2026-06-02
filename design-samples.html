@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Design Samples | Renziel Q. Campos</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .design-header {
+      padding: 48px 0 24px;
+    }
+
+    .design-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .design-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .15s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .design-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99,102,241,.45);
+      background: rgba(255,255,255,.08);
+    }
+
+    .design-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    .design-card::after {
+      content: "Sample Design by Renziel Q. Campos";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      color: rgba(255,255,255,.32);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: .04em;
+      transform: rotate(-18deg);
+      pointer-events: none;
+      text-shadow: 0 2px 10px rgba(0,0,0,.45);
+    }
+
+    .design-card-content {
+      padding: 14px;
+    }
+
+    .design-card-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .design-card-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+    }
+
+    .notice-box strong {
+      color: var(--text);
+    }
+
+    .wide-design img {
+      height: 260px;
+    }
+
+    .view-hint {
+      margin-top: 10px;
+      color: var(--primary-2);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* Lightbox / Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0,0,0,.88);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      width: min(96vw, 1200px);
+      height: min(92vh, 850px);
+      background: rgba(11,18,32,.95);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      flex-shrink: 0;
+    }
+
+    .lightbox-title {
+      margin: 0;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .lightbox-close {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,.14);
+    }
+
+    .lightbox-body {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-body img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+
+    .lightbox-body::after {
+      content: "Sample Design by Renziel Q. Campos";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: rgba(255,255,255,.28);
+      font-size: clamp(22px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: .04em;
+      transform: rotate(-18deg);
+      pointer-events: none;
+      text-shadow: 0 3px 12px rgba(0,0,0,.55);
+    }
+
+    @media (max-width: 900px) {
+      .design-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .design-card img,
+      .wide-design img {
+        height: auto;
+      }
+
+      .lightbox {
+        padding: 10px;
+      }
+
+      .lightbox-content {
+        width: 96vw;
+        height: 90vh;
+      }
+
+      .lightbox-title {
+        font-size: 14px;
+      }
+
+      .lightbox-close {
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#samples">Skip to samples</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-label="Portfolio brand">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span class="brand-text">Renziel Campos</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Portfolio</a>
+        <a class="nav-link" href="index.html#projects">Projects</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="design-header">
+      <div class="container">
+        <h1 class="hero-title">Design Samples</h1>
+
+        <p class="hero-role">Graphic Design • Publication Materials • Visual Layouts</p>
+
+        <p class="hero-intro">
+          A selection of sample designs created for visual content, publication materials,
+          digital layouts, and creative presentations. These samples are shared for viewing purposes only.
+        </p>
+
+        <div class="hero-actions" role="group" aria-label="Design sample actions">
+          <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
+          <a class="btn btn-secondary" href="index.html#contact">Contact Me</a>
+        </div>
+
+        <div class="notice-box">
+          <strong>Viewing Notice:</strong>
+          These design samples are preview-only and watermarked. Please do not copy,
+          download, redistribute, or use these materials without permission.
+        </div>
+      </div>
+    </section>
+
+    <section id="samples" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Sample Works</h2>
+
+        <div class="design-gallery" aria-label="Design sample gallery">
+          <article class="design-card" data-image="design-samples/1.png" data-title="Product Advertisement Design">
+            <img src="design-samples/1.png" alt="Bead and Write customized pen design layout" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Product Advertisement Design</h3>
+              <p class="design-card-desc">
+                A soft product layout for customized bead pens with clear promotional text.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card" data-image="design-samples/2.png" data-title="Handmade Product Layout">
+            <img src="design-samples/2.png" alt="Bead and Write handmade pen product layout" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Handmade Product Layout</h3>
+              <p class="design-card-desc">
+                A visual product showcase using pastel colors and organized composition.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card" data-image="design-samples/3.png" data-title="Travel Promotion Design">
+            <img src="design-samples/3.png" alt="Travel and tour promotional design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Travel Promotion Design</h3>
+              <p class="design-card-desc">
+                A promotional travel layout with package inclusions and visual destination highlights.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card" data-image="design-samples/4.png" data-title="Tour Package Layout">
+            <img src="design-samples/4.png" alt="Private fishing promotional layout" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Tour Package Layout</h3>
+              <p class="design-card-desc">
+                A travel package design featuring service inclusions and pricing information.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/5.png" data-title="Event Ticket Design">
+            <img src="design-samples/5.png" alt="Blue themed event ticket design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Event Ticket Design</h3>
+              <p class="design-card-desc">
+                A themed ticket layout with QR code placement and decorative visual elements.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/6.png" data-title="Banner Layout Design">
+            <img src="design-samples/6.png" alt="Blue themed banner design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Banner Layout Design</h3>
+              <p class="design-card-desc">
+                A clean wide-format banner layout with playful visual styling.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/7.png" data-title="Fan Banner Design">
+            <img src="design-samples/7.png" alt="K-pop inspired orange banner design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Fan Banner Design</h3>
+              <p class="design-card-desc">
+                A creative fan-themed banner using bold typography, color, and photo composition.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/8.png" data-title="Pattern-Based Banner">
+            <img src="design-samples/8.png" alt="Orange animal print themed banner design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Pattern-Based Banner</h3>
+              <p class="design-card-desc">
+                A wide banner design using pattern, character elements, and balanced spacing.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/9.png" data-title="Group-Themed Banner">
+            <img src="design-samples/9.png" alt="K-pop inspired red and orange banner design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Group-Themed Banner</h3>
+              <p class="design-card-desc">
+                A bold horizontal design featuring layered visuals and large typography.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card" data-image="design-samples/10.png" data-title="Cyber Security Poster">
+            <img src="design-samples/10.png" alt="Cyber security poster design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Cyber Security Poster</h3>
+              <p class="design-card-desc">
+                An IT-related poster design focused on cyber security awareness and visual impact.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+
+          <article class="design-card wide-design" data-image="design-samples/11.png" data-title="Travel Brand Layout">
+            <img src="design-samples/11.png" alt="Travel and tours logo or banner design" draggable="false" />
+            <div class="design-card-content">
+              <h3 class="design-card-title">Travel Brand Layout</h3>
+              <p class="design-card-desc">
+                A travel-themed layout with logo placement, QR code, and soft blue visual style.
+              </p>
+              <p class="view-hint">Click to view larger</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <h2 class="lightbox-title" id="lightboxTitle">Design Preview</h2>
+        <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+      </div>
+
+      <div class="lightbox-body">
+        <img id="lightboxImage" src="" alt="Selected design sample preview" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-text">© <span id="year"></span> Renziel Q. Campos. Design samples are for viewing only.</p>
+      <p class="footer-small">Fresh IT Graduate | Junior Web Developer | Graphic Design Knowledge</p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const designCards = document.querySelectorAll('.design-card');
+
+    designCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const imageSrc = card.getAttribute('data-image');
+        const title = card.getAttribute('data-title');
+
+        lightboxImage.src = imageSrc;
+        lightboxTitle.textContent = title;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      const key = event.key.toLowerCase();
+
+      if (key === 'escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+
+      if (
+        (event.ctrlKey && key === 's') ||
+        (event.ctrlKey && key === 'p') ||
+        (event.ctrlKey && key === 'u') ||
+        (event.ctrlKey && key === 'c') ||
+        (event.ctrlKey && event.shiftKey && key === 'i') ||
+        key === 'f12'
+      ) {
+        event.preventDefault();
+        alert('This action is disabled for design sample protection.');
+      }
+    });
+
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+      alert('Right-click is disabled for design sample protection.');
+    });
+  </script>
+</body>
+</html>
