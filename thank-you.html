@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Thank You | Renziel Q. Campos</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .thank-you-section {
+      width: 100%;
+      padding: 48px 0;
+    }
+
+    .thank-you-footer {
+      margin-top: auto;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        align-items: flex-start;
+      }
+
+      .thank-you-section {
+        padding: 34px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="hero thank-you-section" aria-label="Thank you message">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Thank you!</h1>
+
+          <p class="hero-role">Your message has been submitted.</p>
+
+          <p class="hero-intro">
+            Thank you for reaching out. I have received your message and will get back to you as soon as possible.
+          </p>
+
+          <div class="hero-actions" role="group" aria-label="Return actions">
+            <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
+            <a class="btn btn-secondary" href="resume.pdf" target="_blank">View Resume</a>
+          </div>
+
+          <ul class="hero-meta" aria-label="Quick links">
+            <li><span class="dot" aria-hidden="true"></span> Renziel Q. Campos</li>
+            <li><span class="dot" aria-hidden="true"></span> Fresh IT Graduate</li>
+            <li><span class="dot" aria-hidden="true"></span> Junior Web Developer</li>
+          </ul>
+        </div>
+
+        <div class="hero-card" aria-label="Contact confirmation">
+          <div class="hero-card-top">
+            <div class="avatar" aria-hidden="true">RC</div>
+            <div>
+              <p class="hero-card-kicker">Message Status</p>
+              <p class="hero-card-title">Submitted successfully</p>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <p class="stat-value">Email</p>
+              <p class="stat-label">camposrenziel06@gmail.com</p>
+            </div>
+
+            <div class="stat">
+              <p class="stat-value">Location</p>
+              <p class="stat-label">Calamba City, Laguna, Philippines</p>
+            </div>
+
+            <div class="stat">
+              <p class="stat-value">GitHub</p>
+              <p class="stat-label">github.com/camposrenziel2003-stack</p>
+            </div>
+          </div>
+
+          <p class="hero-card-note">
+            Your message was submitted through the contact form.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer thank-you-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-text">
+        © <span id="year"></span> Renziel Q. Campos. Built with HTML, CSS & JavaScript.
+      </p>
+
+      <p class="footer-small">
+        Thank you for visiting my portfolio.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
