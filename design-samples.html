@@ -4,12 +4,101 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Design Samples | Renziel Q. Campos</title>
+  <title>Graphic Design Portfolio | Renziel Q. Campos</title>
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .design-header {
-      padding: 48px 0 24px;
+    .designer-hero {
+      padding: 58px 0 34px;
+    }
+
+    .designer-hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .designer-kicker {
+      margin: 0 0 10px;
+      color: var(--primary-2);
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .designer-title {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .designer-intro {
+      margin: 16px 0 20px;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 68ch;
+    }
+
+    .designer-highlight-card {
+      border-radius: var(--radius);
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+    }
+
+    .designer-highlight-card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .designer-highlight-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .designer-mini-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .designer-mini-list li {
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .design-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .overview-card {
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .overview-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .design-gallery {
@@ -54,7 +143,7 @@
       place-items: center;
       text-align: center;
       padding: 20px;
-      color: rgba(255,255,255,.32);
+      color: rgba(255,255,255,.30);
       font-weight: 900;
       font-size: 22px;
       letter-spacing: .04em;
@@ -65,6 +154,10 @@
 
     .design-card-content {
       padding: 14px;
+      position: relative;
+      z-index: 2;
+      background: rgba(11,18,32,.88);
+      border-top: 1px solid rgba(255,255,255,.10);
     }
 
     .design-card-title {
@@ -76,6 +169,17 @@
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .wide-design img {
+      height: 260px;
+    }
+
+    .view-hint {
+      margin: 10px 0 0;
+      color: var(--primary-2);
+      font-weight: 800;
+      font-size: 13px;
     }
 
     .notice-box {
@@ -91,15 +195,15 @@
       color: var(--text);
     }
 
-    .wide-design img {
-      height: 260px;
+    .designer-cta {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .view-hint {
-      margin-top: 10px;
-      color: var(--primary-2);
-      font-weight: 800;
-      font-size: 13px;
+    .designer-cta p {
+      color: var(--muted);
+      margin: 0 0 18px;
     }
 
     /* Lightbox / Modal */
@@ -189,7 +293,7 @@
       display: grid;
       place-items: center;
       text-align: center;
-      color: rgba(255,255,255,.28);
+      color: rgba(255,255,255,.25);
       font-size: clamp(22px, 4vw, 48px);
       font-weight: 900;
       letter-spacing: .04em;
@@ -199,6 +303,11 @@
     }
 
     @media (max-width: 900px) {
+      .designer-hero-inner,
+      .design-overview-grid {
+        grid-template-columns: 1fr;
+      }
+
       .design-gallery {
         grid-template-columns: 1fr;
       }
@@ -239,38 +348,116 @@
       </div>
 
       <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="index.html">Portfolio</a>
-        <a class="nav-link" href="index.html#projects">Projects</a>
-        <a class="nav-link" href="index.html#contact">Contact</a>
+        <a class="nav-link" href="index.html">Main Portfolio</a>
+        <a class="nav-link" href="#overview">Design Focus</a>
+        <a class="nav-link" href="#samples">Sample Works</a>
+        <a class="nav-link" href="#contact-cta">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="design-header">
-      <div class="container">
-        <h1 class="hero-title">Design Samples</h1>
+    <!-- DESIGN HERO -->
+    <section class="designer-hero">
+      <div class="container designer-hero-inner">
+        <div>
+          <p class="designer-kicker">Graphic Design Portfolio</p>
+          <h1 class="designer-title">Renziel Q. Campos</h1>
 
-        <p class="hero-role">Graphic Design • Publication Materials • Visual Layouts</p>
+          <p class="designer-intro">
+            I create clean, organized, and visually engaging digital materials for social media,
+            promotions, events, branding, and online presentations. My work focuses on readable layouts,
+            clear visual hierarchy, balanced composition, and designs that communicate information effectively.
+          </p>
 
-        <p class="hero-intro">
-          A selection of sample designs created for visual content, publication materials,
-          digital layouts, and creative presentations. These samples are shared for viewing purposes only.
-        </p>
+          <div class="hero-actions" role="group" aria-label="Design portfolio actions">
+            <a class="btn btn-primary" href="#samples">View Design Works</a>
+            <a class="btn btn-secondary" href="index.html#contact">Contact Me</a>
+          </div>
 
-        <div class="hero-actions" role="group" aria-label="Design sample actions">
-          <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
-          <a class="btn btn-secondary" href="index.html#contact">Contact Me</a>
+          <div class="notice-box">
+            <strong>Viewing Notice:</strong>
+            These design samples are preview-only and watermarked. Please do not copy,
+            download, redistribute, or use these materials without permission.
+          </div>
         </div>
 
-        <div class="notice-box">
-          <strong>Viewing Notice:</strong>
-          These design samples are preview-only and watermarked. Please do not copy,
-          download, redistribute, or use these materials without permission.
+        <aside class="designer-highlight-card" aria-label="Designer profile">
+          <h2>Creative Designer with Tech Background</h2>
+          <p>
+            I combine graphic design skills with my Information Technology background, allowing me to create
+            digital materials that are both visually appealing and organized for online use.
+          </p>
+
+          <ul class="designer-mini-list">
+            <li>Publication Materials</li>
+            <li>Social Media Graphics</li>
+            <li>Promotional Layouts</li>
+            <li>Banners and Event Visuals</li>
+            <li>Canva and Figma-based Designs</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DESIGN OVERVIEW -->
+    <section id="overview" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Design Focus</h2>
+
+        <div class="design-overview-grid">
+          <article class="overview-card">
+            <h3>Social Media & Promotional Design</h3>
+            <p>
+              Designs for product promotions, service offers, announcements, and online marketing materials.
+            </p>
+          </article>
+
+          <article class="overview-card">
+            <h3>Publication Materials</h3>
+            <p>
+              Clean and readable layouts for digital posting, event information, awareness materials,
+              and visual presentations.
+            </p>
+          </article>
+
+          <article class="overview-card">
+            <h3>Branding & Visual Layouts</h3>
+            <p>
+              Simple brand-aligned visuals using colors, typography, spacing, and image composition.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- TOOLS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tools & Design Skills</h2>
+
+        <div class="chips" role="list" aria-label="Design tools and skills">
+          <span class="chip" role="listitem">Canva</span>
+          <span class="chip" role="listitem">Figma</span>
+          <span class="chip" role="listitem">Publication Materials</span>
+          <span class="chip" role="listitem">Social Media Layouts</span>
+          <span class="chip" role="listitem">Promotional Posters</span>
+          <span class="chip" role="listitem">Banner Design</span>
+          <span class="chip" role="listitem">Event / Ticket Layouts</span>
+          <span class="chip" role="listitem">Basic Branding</span>
+          <span class="chip" role="listitem">Typography</span>
+          <span class="chip" role="listitem">Visual Hierarchy</span>
+          <span class="chip" role="listitem">Layout Composition</span>
+          <span class="chip" role="listitem">Color Coordination</span>
+        </div>
+
+        <p class="section-muted">
+          I create digital layouts with attention to readability, spacing, color, and overall presentation.
+        </p>
+      </div>
+    </section>
+
+    <!-- SAMPLE WORKS -->
     <section id="samples" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Sample Works</h2>
@@ -399,6 +586,24 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTACT CTA -->
+    <section id="contact-cta" class="section">
+      <div class="container">
+        <div class="designer-cta">
+          <h2 class="section-title">Interested in my design work?</h2>
+          <p>
+            I am open to graphic design roles involving publication materials, social media graphics,
+            promotional layouts, branding visuals, and digital content design.
+          </p>
+
+          <div class="hero-actions" role="group" aria-label="Contact actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="index.html#contact">Contact Me</a>
+            <a class="btn btn-secondary" href="index.html">View Main Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -417,7 +622,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <p class="footer-text">© <span id="year"></span> Renziel Q. Campos. Design samples are for viewing only.</p>
-      <p class="footer-small">Fresh IT Graduate | Junior Web Developer | Graphic Design Knowledge</p>
+      <p class="footer-small">Graphic Design Portfolio | Publication Materials | Digital Layouts</p>
     </div>
   </footer>
 
