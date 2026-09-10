@@ -204,7 +204,7 @@
 
             <div class="hero-actions" role="group" aria-label="Design portfolio actions">
               <a class="btn btn-primary" href="design-samples.html">View Sample Designs</a>
-              <a class="btn btn-secondary" href="design-samples.html#aroimak-ui">View AROIMAK UI Design</a>
+              <a class="btn btn-secondary" href="#projects">View Web Projects</a>
             </div>
           </div>
 
@@ -224,194 +224,103 @@
     </section>
 
     <!-- PROJECTS -->
-<section id="projects" class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
 
-    <div class="cards" role="list" aria-label="Project cards">
+        <div class="cards" role="list" aria-label="Project cards">
+          <article class="card" role="listitem">
+            <h3 class="card-title">AROIMAK: Digital Application Management System</h3>
 
-      <!-- DTR SYSTEM -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">WVAS OJT Attendance System</h3>
+            <p class="card-desc">
+              A tablet-based ordering system developed for a Thai restaurant, featuring an interactive user
+              interface and Thai audio pronunciation support to improve customer experience and ordering efficiency.
+            </p>
 
-        <p class="card-desc">
-          A web-based attendance and OJT hour management system designed to streamline
-          intern time tracking, attendance monitoring, hour calculation, and report generation.
-        </p>
+            <ul class="card-list">
+              <li>Developed tablet-based ordering features</li>
+              <li>Integrated Thai audio pronunciation and interactive UI features</li>
+              <li>Focused on improving user experience and ordering efficiency</li>
+              <li>Contributed to frontend design and backend development</li>
+            </ul>
 
-        <ul class="card-list">
-          <li>Implemented intern authentication using name selection and PIN</li>
-          <li>Built daily time-in and time-out tracking with attendance status monitoring</li>
-          <li>Implemented OJT hour calculation, total hours, and remaining-hour tracking</li>
-          <li>Built a supervisor dashboard for team attendance monitoring</li>
-          <li>Implemented individual and consolidated attendance reports with CSV export</li>
-          <li>Integrated frontend functionality with a backend API</li>
-        </ul>
+            <a class="card-link" href="#contact">Request details</a>
+          </article>
 
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> HTML, CSS, JavaScript, Google Apps Script, Google Sheets, Netlify
-        </p>
+          <article class="card" role="listitem">
+            <h3 class="card-title">Notice of Violation Tracker System</h3>
 
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
-          <a
-            class="card-link"
-            href="https://github.com/camposrenziel2003-stack/WVAS-OJT"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View GitHub
-          </a>
+            <p class="card-desc">
+              A web-based system for tracking developer violations, built during internship using Laravel,
+              PHP, and Laragon. The system supports violation record tracking from issuance to resolution.
+            </p>
+
+            <ul class="card-list">
+              <li>Assisted in developing system features for an internal web-based application</li>
+              <li>Implemented unique violation number generation per record</li>
+              <li>Built workflow from issuance to resolution</li>
+              <li>Used Laravel, PHP, Laragon, Composer, Git, and GitHub for development</li>
+            </ul>
+
+            <a class="card-link" href="#contact">Request details</a>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title">JUST JUMBLE: Jumbled Words Using FCFS CPU Scheduling Algorithm</h3>
+
+            <p class="card-desc">
+              A Python-based jumbled words project that applies the First Come First Serve (FCFS)
+              CPU Scheduling Algorithm to process and manage game flow.
+            </p>
+
+            <ul class="card-list">
+              <li>Developed using Python</li>
+              <li>Applied FCFS CPU Scheduling Algorithm concepts</li>
+              <li>Contributed to both frontend and backend development</li>
+              <li>Helped build the game logic and user interaction flow</li>
+            </ul>
+
+            <a class="card-link" href="#contact">Request details</a>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title">ALISTO, SERBISYO: Digital Hub for Community Concerns</h3>
+
+            <p class="card-desc">
+              A digital reporting hub designed for Barangay Parian to help report and resolve
+              community concerns through GPS tracking and organized concern management.
+            </p>
+
+            <ul class="card-list">
+              <li>Focused mainly on frontend development</li>
+              <li>Contributed to selected backend tasks</li>
+              <li>Helped with documentation and system planning</li>
+              <li>Designed for reporting and resolving barangay community concerns via GPS tracking</li>
+            </ul>
+
+            <a class="card-link" href="#contact">Request details</a>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title">Personal Portfolio Website</h3>
+
+            <p class="card-desc">
+              A responsive one-page portfolio website created to present my background, technical skills,
+              projects, design skills, and contact information for job applications.
+            </p>
+
+            <ul class="card-list">
+              <li>Built with HTML, CSS, and JavaScript</li>
+              <li>Responsive layout for desktop and mobile devices</li>
+              <li>Structured sections for resume, skills, projects, design samples, and contact information</li>
+              <li>Includes noindex settings to avoid appearing in search results</li>
+            </ul>
+
+            <a class="card-link" href="#contact">View contact</a>
+          </article>
         </div>
-      </article>
-
-      <!-- N8N AUTOMATION -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">Remote Job Alert Automation System</h3>
-
-        <p class="card-desc">
-          An automated workflow for collecting job postings, filtering relevant opportunities,
-          detecting duplicates, and delivering job alerts through automated notifications.
-        </p>
-
-        <ul class="card-list">
-          <li>Automated job data collection using RSS feeds</li>
-          <li>Implemented keyword-based filtering for relevant job postings</li>
-          <li>Added duplicate detection to reduce repeated job alerts</li>
-          <li>Integrated Google Sheets for data handling and organization</li>
-          <li>Implemented Discord webhook notifications</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> n8n, Docker, JavaScript, RSS Feeds, Google Sheets API, Discord Webhooks
-        </p>
-
-        <a class="card-link" href="#contact">Request details</a>
-      </article>
-
-      <!-- NOTICE OF VIOLATION -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">Notice of Violation Tracker System</h3>
-
-        <p class="card-desc">
-          A Laravel-based web application developed during internship for tracking developer
-          violations from issuance through resolution using database-driven workflows.
-        </p>
-
-        <ul class="card-list">
-          <li>Implemented unique violation number generation per record</li>
-          <li>Built a workflow from violation issuance to resolution</li>
-          <li>Implemented database-driven tracking functionality</li>
-          <li>Used Git and GitHub for version control</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> PHP, Laravel, MySQL, Git, GitHub
-        </p>
-
-        <a class="card-link" href="#contact">Request details</a>
-      </article>
-
-      <!-- AROIMAK -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">AROIMAK: Digital Application Management System</h3>
-
-        <p class="card-desc">
-          A tablet-based restaurant ordering system developed for a Thai restaurant,
-          featuring an interactive interface and Thai audio pronunciation support.
-        </p>
-
-        <ul class="card-list">
-          <li>Developed tablet-based ordering features</li>
-          <li>Implemented database-driven ordering functionality</li>
-          <li>Integrated Thai audio pronunciation support</li>
-          <li>Implemented customizable spice-level options</li>
-          <li>Contributed to frontend and backend development</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> PHP, MySQL, HTML, CSS, JavaScript
-        </p>
-
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
-          <a class="card-link" href="design-samples.html#aroimak-ui">
-            Check UI Design
-          </a>
-          <a class="card-link" href="#contact">Request details</a>
-        </div>
-      </article>
-
-      <!-- ALISTO -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">ALISTO, SERBISYO: Digital Hub for Community Concerns</h3>
-
-        <p class="card-desc">
-          A digital reporting hub designed for Barangay Parian to help organize and manage
-          community concerns through GPS-based reporting.
-        </p>
-
-        <ul class="card-list">
-          <li>Focused mainly on frontend development</li>
-          <li>Contributed to selected backend tasks</li>
-          <li>Helped with documentation and system planning</li>
-          <li>Designed for organized reporting and concern management</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Focus:</strong> Web Development, UI Design, System Planning, GPS Integration
-        </p>
-
-        <a class="card-link" href="#contact">Request details</a>
-      </article>
-
-      <!-- JUST JUMBLE -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">JUST JUMBLE: Jumbled Words Using FCFS CPU Scheduling Algorithm</h3>
-
-        <p class="card-desc">
-          A Python-based jumbled words project that applies the First Come First Serve (FCFS)
-          CPU Scheduling Algorithm to process and manage game flow.
-        </p>
-
-        <ul class="card-list">
-          <li>Developed using Python</li>
-          <li>Applied FCFS CPU Scheduling Algorithm concepts</li>
-          <li>Implemented game logic and user interaction flow</li>
-          <li>Contributed to frontend and backend development</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> Python
-        </p>
-
-        <a class="card-link" href="#contact">Request details</a>
-      </article>
-
-      <!-- PORTFOLIO -->
-      <article class="card" role="listitem">
-        <h3 class="card-title">Personal Portfolio Website</h3>
-
-        <p class="card-desc">
-          A responsive portfolio website created to present my background, technical skills,
-          projects, design work, and professional contact information.
-        </p>
-
-        <ul class="card-list">
-          <li>Built with HTML, CSS, and JavaScript</li>
-          <li>Responsive layout for desktop and mobile devices</li>
-          <li>Structured sections for resume, skills, projects, and contact information</li>
-          <li>Integrated a contact form and project showcase</li>
-        </ul>
-
-        <p class="section-muted" style="margin-top: 12px;">
-          <strong>Tech:</strong> HTML, CSS, JavaScript
-        </p>
-
-        <a class="card-link" href="#contact">View contact</a>
-      </article>
-
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
